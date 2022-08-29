@@ -1,6 +1,6 @@
 name: flow v.01
 on:
-  issues:
+  push:
     branches:    
       - main
 jobs:
