@@ -9,21 +9,26 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: echo "this is just test echo!"
-#    - run: ls -al
-#    - id: get-comment-body
-#      run: |
-#        chmod 777 script.sh
-#        ./script.sh 
+    - run: ls -al
+    - id: get-comment-body
+      run: |
+        chmod 777 script.sh
+        ./script.sh 
 
-#IF WE WANT COMMENTS INSIDE OF COMMIT AS V10 (30c11d5)
+
+
+    - name: Comment PR
+      uses: thollander/actions-comment-pull-request@v1
+      with:
+        message: ${{ steps.get-comment-body.outputs.body }}
+          
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
+
+
+       #IF WE WANT COMMENTS INSIDE OF COMMIT AS V10 (30c11d5)
 #    - name: Create commit comment
 #      uses: peter-evans/commit-comment@v2
 #      with:
-#        body: ${{ steps.get-comment-body.outputs.body }}
-
-#    - name: Comment PR
-#      uses: thollander/actions-comment-pull-request@v1
-#      with:
-#        message: ${{ steps.get-comment-body.outputs.body }}
-#          
-#        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#      body: ${{ steps.get-comment-body.outputs.body }}
