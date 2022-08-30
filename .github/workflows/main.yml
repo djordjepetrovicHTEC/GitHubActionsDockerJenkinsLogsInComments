@@ -2,7 +2,7 @@ name: flow v.01
 on:
   push:
     branches:    
-      - main
+      - feature-pr-branch
 jobs:
   run:
     runs-on: ubuntu-latest
