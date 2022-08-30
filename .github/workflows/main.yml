@@ -1,6 +1,6 @@
 name: flow v.01
 on:
-  push:
+  pull_request:
     branches:    
       - main
 jobs:
