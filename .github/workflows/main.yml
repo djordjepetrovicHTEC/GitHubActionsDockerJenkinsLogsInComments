@@ -15,12 +15,17 @@ jobs:
     - run: docker -v
 #    - name: Build the Docker image
 #      run: sudo docker build . --file Dockerfile --tag docker-jenkins
-#    - name: stop and delete all running containers
-#      run: sudo docker rm -f docker-jenkins-v1
-#    - name: IP check
-#      run: ip a
-#    - name: Build the Docker container
-#      run: sudo docker run --name docker-jenkins-v1 -p 99:80 docker-jenkins
+    - name: stop and delete all running containers
+      run: sudo docker rm -f docker-jenkins-v1
+    - name: IP check
+      run: ip a
+    - name: Build the Docker container
+      run: sudo docker run --name docker-jenkins-v1 -p 8080:8080 -p 50000:50000 -d jenkins/jenkins
+      #volume whole path:
+      #-v /home/htec11090/actions-runner2/DockerJenkinsVolume:/var/jenkins_home
+      #named volume whole path:
+      #-v docker_jenkins:/var/jenkins_home
+      
 #    - name: Inspect container
 #      run: sudo docker inspect docker-jenkins-v1
 
