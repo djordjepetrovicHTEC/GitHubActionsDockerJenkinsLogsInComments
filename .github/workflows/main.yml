@@ -6,10 +6,31 @@ on:
 jobs:
   run:
     runs-on: ubuntu-latest
+    #runs-on: self-hosted
     steps:
     - uses: actions/checkout@v2
     - run: echo "this is just test echo!"
+    - run: pwd
     - run: ls -al
+    - run: docker -v
+#    - name: Build the Docker image
+#      run: sudo docker build . --file Dockerfile --tag docker-jenkins
+#    - name: stop and delete all running containers
+#      run: sudo docker rm -f docker-jenkins-v1
+#    - name: IP check
+#      run: ip a
+#    - name: Build the Docker container
+#      run: sudo docker run --name docker-jenkins-v1 -p 99:80 docker-jenkins
+#    - name: Inspect container
+#      run: sudo docker inspect docker-jenkins-v1
+
+
+
+
+
+
+
+
     - id: get-comment-body
       run: |
         chmod 777 script.sh
