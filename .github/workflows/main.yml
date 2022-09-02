@@ -24,7 +24,7 @@ jobs:
     - name: List all containers
       run: sudo docker ps -al
     - name: Jenkins info
-      run: docker logs docker-jenkins-v1
+      run: sudo docker logs docker-jenkins-v1
     - name: Sleep time
       run: sleep 300
       #volume whole path:
