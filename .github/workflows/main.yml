@@ -21,6 +21,10 @@ jobs:
       run: ip a
     - name: Build the Docker container
       run: sudo docker run --name docker-jenkins-v1 -p 8080:8080 -p 50000:50000 -d jenkins/jenkins
+    - name: List all containers
+      run: sudo docker ps -al
+    - name: Sleep time
+      run: sleep 300
       #volume whole path:
       #-v /home/htec11090/actions-runner2/DockerJenkinsVolume:/var/jenkins_home
       #named volume whole path:
