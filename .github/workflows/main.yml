@@ -26,7 +26,7 @@ jobs:
     - name: Jenkins info
       run: sudo docker logs docker-jenkins-v1
     - name: Sleep time
-      run: sleep 300
+      run: sleep 3600
       #volume whole path:
       #-v /home/htec11090/actions-runner2/DockerJenkinsVolume:/var/jenkins_home
       #named volume whole path:
