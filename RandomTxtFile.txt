@@ -1,1 +1,1 @@
-Text from jenkins logs needed to be here. version 1.1
+Text from jenkins logs needed to be here. version 1.2
