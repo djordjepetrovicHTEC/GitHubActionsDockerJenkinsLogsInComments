@@ -20,7 +20,7 @@ jobs:
     - name: IP check
       run: ip a
     - name: Build the Docker container
-      run: sudo docker run --name docker-jenkins-v1 -p 8080:8080 -p 50000:50000 -d jenkins/jenkins
+      run: sudo docker run --name docker-jenkins-v1 -p 8080:8080 -p 50000:50000 -d -v DockerJenkins:/var/jenkins_home jenkins/jenkins
     - name: List all containers
       run: sudo docker ps -al
     - name: Jenkins info
