@@ -28,7 +28,7 @@ jobs:
     - name: Curl
       run: curl http://172.18.94.170:8080/api/json?pretty=true
     - name: Sleep time
-      run: sleep 240
+      run: sleep 60
 
       #volume whole path:
       #-v /home/htec11090/actions-runner2/DockerJenkinsVolume:/var/jenkins_home
