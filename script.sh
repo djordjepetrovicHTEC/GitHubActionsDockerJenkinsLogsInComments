@@ -1,4 +1,4 @@
 #!/bin/sh -l
 
-body=$(cat RandomTxtFile.txt)
+body=$(cat PRCommentLog.txt)
 echo ::set-output name=body::$body
