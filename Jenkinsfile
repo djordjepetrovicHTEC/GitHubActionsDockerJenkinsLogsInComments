@@ -9,11 +9,6 @@ pipeline {
                 userRemoteConfigs: [[url: 'https://github.com/htec11090/GitHubActionsDockerJenkinsLogsInComments.git']]])
             }
         }
-        stage('Echo') {
-            steps {
-                echo 'Hello from jenkinsfile v 1.8' 
-            }
-        }
         stage('Text') {
             when {
               branch "feature-*"
