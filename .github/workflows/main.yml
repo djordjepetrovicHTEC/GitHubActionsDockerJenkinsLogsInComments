@@ -25,9 +25,11 @@ jobs:
       run: sudo docker ps -al
     - name: Jenkins info
       run: sudo docker logs docker-jenkins-v1
+    - name: Curl
+      run: curl http://172.18.94.170:8080/api/json?pretty=true
     - name: Sleep time
       run: sleep 240
-      
+
       #volume whole path:
       #-v /home/htec11090/actions-runner2/DockerJenkinsVolume:/var/jenkins_home
       #named volume whole path:
