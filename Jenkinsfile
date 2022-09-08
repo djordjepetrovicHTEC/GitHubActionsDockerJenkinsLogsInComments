@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Echo') {
             steps {
-                echo 'Hello from jenkinsfile v 1.6' 
+                echo 'Hello from jenkinsfile v 1.8' 
             }
         }
         stage('Text') {
