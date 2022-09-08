@@ -1,1 +1,1 @@
-Text from jenkins logs needed to be here.
+This is random text that should be displayed in jenkins console output.
