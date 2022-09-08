@@ -20,8 +20,8 @@ jobs:
       run: sudo docker logs docker-jenkins-v1
     - name: curl script
       run: |
-      chmod 777 curlScript.sh
-      ./curlScript.sh
+        chmod 777 curlScript.sh
+        ./curlScript.sh
 
     - name: Sleep time
       run: sleep 240
@@ -29,7 +29,7 @@ jobs:
       run: |
         chmod 777 script.sh
         ./script.sh 
-        
+
     - name: Comment PR
       uses: thollander/actions-comment-pull-request@v1
       with:
