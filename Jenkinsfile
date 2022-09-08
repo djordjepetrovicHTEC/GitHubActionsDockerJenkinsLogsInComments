@@ -23,19 +23,5 @@ pipeline {
                 '''
             }
         }
-        def directory = "${env.WORKSPACE}/GitHubActionsDockerJenkinsLogsInComments"
-        stage('capture console output') {
-            script {
-                def logContent = Jenkins.getInstance().getItemByFullName(env.JOB_NAME).getBuildByNumber(
-                Integer.parseInt(env.BUILD_NUMBER)).logFile.text
-                writeFile file: directory + "/RandomTxtFile.txt",
-                text: logContent
-            }
-            def consoleOutput = readFile directory + '/RandomTxtFile.txt'
-            echo 'Console output saved in the RandomTxtFile.txt'
-            echo '--------------------------------------'
-            echo consoleOutput
-            echo '--------------------------------------'
-            }
     }
 }
