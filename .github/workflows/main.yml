@@ -47,6 +47,7 @@ jobs:
 
     - id: get-comment-body
       run: |
+        chmod 777 curlScript.sh
         chmod 777 script.sh
         ./script.sh 
 
