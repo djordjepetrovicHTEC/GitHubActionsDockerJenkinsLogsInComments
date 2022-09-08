@@ -6,15 +6,13 @@ on:
 jobs:
   run:
     runs-on: self-hosted
-    #runs-on: self-hosted
     steps:
     - uses: actions/checkout@v2
-    - run: echo "this is just test echo!"
-    - run: pwd
-    - run: ls -al
-    - run: docker -v
-#    - name: Build the Docker image
-#      run: sudo docker build . --file Dockerfile --tag docker-jenkins
+    - name: checks
+      run: |
+      pwd
+      ls -al
+      docker -v
     - name: stop and delete all running containers
       run: sudo docker rm -f docker-jenkins-v1
     - name: IP check
@@ -25,43 +23,21 @@ jobs:
       run: sudo docker ps -al
     - name: Jenkins info
       run: sudo docker logs docker-jenkins-v1
-#    - name: Curl
-#      run: curl http://172.18.94.170:8080/api/json?pretty=true
-#    - name: Sleep time
-#      run: sleep 60
-
-      #volume whole path:
-      #-v /home/htec11090/actions-runner2/DockerJenkinsVolume:/var/jenkins_home
-      #named volume whole path:
-      #-v docker_jenkins:/var/jenkins_home
-      
-#    - name: Inspect container
-#      run: sudo docker inspect docker-jenkins-v1
-
-
-
-
-
-
-
-
+    - name: curl script
+      run: |
+      chmod 777 curlScript.sh
+      ./curlScript.sh
+    - name: Sleep time
+      run: sleep 240
     - id: get-comment-body
       run: |
-        chmod 777 curlScript.sh
         chmod 777 script.sh
         ./script.sh 
-
-
-
     - name: Comment PR
       uses: thollander/actions-comment-pull-request@v1
       with:
         message: ${{ steps.get-comment-body.outputs.body }}
-          
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-
-
 
        #IF WE WANT COMMENTS INSIDE OF COMMIT AS V10 (30c11d5)
 #    - name: Create commit comment
