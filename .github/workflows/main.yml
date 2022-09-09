@@ -20,14 +20,21 @@ jobs:
       run: sudo docker logs docker-jenkins-v1
 
     - name: Sleep time
-      run: sleep 60
+      run: sleep 90
 
     - name: curl script
       run: |
         chmod 777 curlScript.sh
         ./curlScript.sh
+        cat PRCommentLog.txt
 
-    - id: get-comment-body
+    - name: sed script
+      run: |
+        chmod 777 sedScript.sh
+        ./sedScript.sh
+        cat finishedFile.txt
+
+    - name: comment script
       run: |
         chmod 777 script.sh
         ./script.sh 

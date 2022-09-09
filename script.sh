@@ -1,10 +1,4 @@
 #!/bin/sh -l
-cat PRCommentLog.txt
-echo "---------------"
-body=$(cat PRCommentLog.txt)
-echo "---------------"
+body=$(cat finishedFile.txt)
 #| sed 's/^ [ \t]*//;s/[ \t]*$//')
-echo $body
-echo "---------------"
-#body=$(cat PRCommentLog.txt)
 echo ::set-output name=body::$body
