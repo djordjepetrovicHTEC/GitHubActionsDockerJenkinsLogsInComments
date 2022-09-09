@@ -20,7 +20,7 @@ jobs:
       run: sudo docker logs docker-jenkins-v1
 
     - name: Sleep time
-      run: sleep 120
+      run: sleep 210
 
     - name: curl script
       run: |
