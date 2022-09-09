@@ -26,9 +26,8 @@ jobs:
       run: |
         chmod 777 curlScript.sh
         ./curlScript.sh
-        cat PRCommentLog.txt
 
-    - name: comment script
+    - id: get-comment-body
       run: |
         chmod 777 script.sh
         ./script.sh 
