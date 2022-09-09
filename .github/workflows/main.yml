@@ -22,10 +22,10 @@ jobs:
     - name: Sleep time
       run: sleep 210
 
-#    - name: curl script
-#      run: |
-#        chmod 777 curlScript.sh
-#        ./curlScript.sh
+    - name: curl script
+      run: |
+        chmod 777 curlScript.sh
+        ./curlScript.sh
 
     - id: get-comment-body
       run: |
