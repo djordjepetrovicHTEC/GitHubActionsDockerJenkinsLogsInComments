@@ -28,12 +28,6 @@ jobs:
         ./curlScript.sh
         cat PRCommentLog.txt
 
-    - name: sed script
-      run: |
-        chmod 777 sedScript.sh
-        ./sedScript.sh
-        cat finishedFile.txt
-
     - name: comment script
       run: |
         chmod 777 script.sh

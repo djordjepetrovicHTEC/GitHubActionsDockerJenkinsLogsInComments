@@ -1,5 +1,5 @@
 #!/bin/sh -l
-body=$(cat finishedFile.txt)
+body=$(cat PRCommentLog.txt)
 echo "---------------"
 #| sed 's/^ [ \t]*//;s/[ \t]*$//')
 echo $body
