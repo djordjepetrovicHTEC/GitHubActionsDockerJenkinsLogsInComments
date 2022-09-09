@@ -1,5 +1,5 @@
 #!/bin/sh -l
-exec > /home/htec11090/actions-runner2/_work/GitHubActionsDockerJenkinsLogsInComments/GitHubActionsDockerJenkinsLogsInComments/PRCommentLog.txt
+exec > /home/htec11090/actions-runner2/_work/GitHubActionsDockerJenkinsLogsInComments/GitHubActionsDockerJenkinsLogsInComments/PRCommentLog.txt | sed "s/\\n/<br\/>/"
 # 2>&1
 
 NBN=$(sudo cat /var/lib/docker/volumes/DockerJenkins/_data/jobs/test3/branches/feature-pr-branch/nextBuildNumber)
