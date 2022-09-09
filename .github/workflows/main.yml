@@ -1,29 +1,45 @@
 name: flow v.01
 on:
-  push:
+  pull_request:
     branches:    
       - main
 jobs:
   run:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
     - uses: actions/checkout@v2
-    - run: echo "this is just test echo!"
-#    - run: ls -al
-#    - id: get-comment-body
-#      run: |
-#        chmod 777 script.sh
-#        ./script.sh 
+    - name: stop and delete all running containers
+      run: sudo docker rm -f docker-jenkins-v1
+    - name: IP check
+      run: ip a
+    - name: Build the Docker container
+      run: sudo docker run --name docker-jenkins-v1 -p 8080:8080 -p 50000:50000 -d -v DockerJenkins:/var/jenkins_home jenkins/jenkins
+    - name: List all containers
+      run: sudo docker ps -al
+    - name: Jenkins info
+      run: sudo docker logs docker-jenkins-v1
 
-#IF WE WANT COMMENTS INSIDE OF COMMIT AS V10 (30c11d5)
+    - name: Sleep time
+      run: sleep 90
+
+    - name: curl script
+      run: |
+        chmod 777 curlScript.sh
+        ./curlScript.sh
+
+    - id: get-comment-body
+      run: |
+        chmod 777 script.sh
+        ./script.sh 
+
+    - name: Comment PR
+      uses: thollander/actions-comment-pull-request@v1
+      with:
+        message: ${{ steps.get-comment-body.outputs.body }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+       #IF WE WANT COMMENTS INSIDE OF COMMIT AS V10 (30c11d5)
 #    - name: Create commit comment
 #      uses: peter-evans/commit-comment@v2
 #      with:
-#        body: ${{ steps.get-comment-body.outputs.body }}
-
-#    - name: Comment PR
-#      uses: thollander/actions-comment-pull-request@v1
-#      with:
-#        message: ${{ steps.get-comment-body.outputs.body }}
-#          
-#        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#      body: ${{ steps.get-comment-body.outputs.body }}
