@@ -14,7 +14,6 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: Test1
-        id: test_1
         run: |
           cd ${{ env.TEST_ENV }}
           pwd
