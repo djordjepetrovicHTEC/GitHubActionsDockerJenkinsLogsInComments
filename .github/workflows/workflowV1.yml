@@ -7,6 +7,7 @@ on:
 
 env:
   TEST_ENV: "/home/htec11090/testDir"
+  my_string: "Hello world!"
 
 jobs:
   env_variable_test:
@@ -19,7 +20,7 @@ jobs:
           cd ${{ env.TEST_ENV }}
           pwd
           cat testfile.txt
-          echo "{my_string}={Hello world!}" >> $GITHUB_ENV
+#          echo "{my_string}={Hello world!}" >> $GITHUB_ENV
 
 
           
