@@ -14,13 +14,18 @@ jobs:
   env_variable_test:
     name: env variable fix
     runs-on: self-hosted
+    outputs:
+      output1: ${{ steps.Test1.outputs.real_string }}
     steps:
       - name: Test1
+        id: test1
         run: |
           cd ${{ env.TEST_ENV }}
           pwd
           cat testfile.txt
           echo "real_string=real" >> $GITHUB_OUTPUT
+
+
 
       - name: Test2
         run: |
@@ -28,6 +33,7 @@ jobs:
           echo "test before variable"
           echo "My string is ${{ env.my_string }}"
           echo "My real string is ${{ env.real_string }}"
+          echo "My real REAL string is ${{outputs.output1}}"
           echo "test after variable"
 
 
