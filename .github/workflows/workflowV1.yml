@@ -7,8 +7,7 @@ on:
 
 env:
   TEST_ENV: "/home/htec11090/testDir"
-  GITHUB_OUTPUT: ""
-#  my_string: "Hello world!"
+  my_string: "Hello world!"
 
 
 jobs:
@@ -22,13 +21,13 @@ jobs:
           cd ${{ env.TEST_ENV }}
           pwd
           cat testfile.txt
-          echo "test=world" >> $GITHUB_OUTPUT
+#          echo "test=world" >> $GITHUB_OUTPUT
       - name: Test2
         run: |
           pwd
           echo "test before variable"
-#          echo "${{ env.my_string }}"
-          echo "My string is ${{ env.test }}"
+          echo "My string is ${{ env.my_string }}"
+#          echo "My real string is ${{ env.my_string }}"
           echo "test after variable"
 
 
