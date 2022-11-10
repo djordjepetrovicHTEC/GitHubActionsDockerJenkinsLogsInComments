@@ -21,13 +21,13 @@ jobs:
           cd ${{ env.TEST_ENV }}
           pwd
           cat testfile.txt
-          echo "test=world" >> $GITHUB_OUTPUT
+          echo "$test=world" >> $GITHUB_OUTPUT
       - name: Test2
         run: |
           pwd
           echo "test before variable"
 #          echo "${{ env.my_string }}"
-          echo "My string is ${{ steps.my_string.outputs.STRING_VARIABLE }}"
+          echo "My string is ${{ steps.my_string.outputs.$test }}"
           echo "test after variable"
 
 
