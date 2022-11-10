@@ -20,12 +20,14 @@ jobs:
           cd ${{ env.TEST_ENV }}
           pwd
           cat testfile.txt
+          echo "real_string=real" >> $GITHUB_OUTPUT
 
       - name: Test2
         run: |
           pwd
           echo "test before variable"
           echo "My string is ${{ env.my_string }}"
+          echo "My real string is ${{ env.real_string }}"
           echo "test after variable"
 
 
