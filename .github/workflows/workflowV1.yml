@@ -25,6 +25,7 @@ jobs:
           third line
           EOF
           )
+        id: my_string
           
 
       - name: Test2
