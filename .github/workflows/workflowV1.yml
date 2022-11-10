@@ -10,28 +10,26 @@ env:
 
 jobs:
   env_variable_test:
-    name: env variable fix v1
+    name: env variable fix
     runs-on: self-hosted
     steps:
       - name: Test1
+        id: my_string
         run: |
           cd ${{ env.TEST_ENV }}
           pwd
           cat testfile.txt
-          MY_STRING=$(cat << EOF
-          first line
-          second line
-          third line
-          EOF
-          )
-        id: my_string
+          echo "{my_string}={Hello world!}" >> $GITHUB_ENV
+
+
           
 
       - name: Test2
         run: |
-          echo "test2"
-          echo "The string is: ${{ env.MY_STRING }}"
-          echo "test2222"
+          pwd
+          echo "test before variable"
+          echo "The string is: ${{ env.my_string }}"
+          echo "test after variable"
 
       
 
