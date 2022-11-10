@@ -16,7 +16,7 @@ jobs:
       - name: Test1
         id: test_1
         run: |
-          cd ${{ env.TEST_PATH }}
+          cd ${{ env.TEST_ENV }}
           touch testfile.txt
           list=$(ls -al)
           echo "list=$list" >> $LIST_ENV
