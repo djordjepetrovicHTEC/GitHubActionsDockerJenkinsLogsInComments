@@ -21,7 +21,7 @@ jobs:
           cd ${{ env.TEST_ENV }}
           pwd
           cat testfile.txt
-          echo "{STRING_VARIABLE}={Hello world!}" >> $GITHUB_ENV
+          echo "STRING_VARIABLE=Hello world!" >> $GITHUB_ENV
       - name: Test2
         run: |
           pwd
