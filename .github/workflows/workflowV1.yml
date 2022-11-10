@@ -1,0 +1,30 @@
+name: flow v.02
+
+on:
+  push:
+    branches:    
+      - feature-new-workflow
+
+env:
+  TEST_ENV: "/home/htec11090/testDir"
+
+jobs:
+  env variable test:
+    name: env variable fix v1
+    runs-on: self-hosted
+    steps:
+      - name: Test1
+        id: test_1
+        run: |
+          cd ${{ env.TEST_PATH }}
+          touch testfile.txt
+          list=$(ls -al)
+          echo "list=$list" >> $LIST_ENV
+      - name: Test2
+        run: |
+          echo "test2"
+          ${{ steps.Test2.outputs.list}}
+
+      
+
+      
