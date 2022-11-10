@@ -21,7 +21,6 @@ jobs:
           cd ${{ env.TEST_ENV }}
           pwd
           cat testfile.txt
-#          echo "test=world" >> $GITHUB_OUTPUT
       - name: Test2
         run: |
           pwd
