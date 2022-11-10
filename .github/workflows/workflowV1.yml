@@ -24,6 +24,7 @@ jobs:
         run: |
           echo "test2"
           $LIST_ENV
+          echo "test2222"
 
       
 
