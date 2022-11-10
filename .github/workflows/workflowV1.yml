@@ -19,7 +19,7 @@ jobs:
           cd ${{ env.TEST_ENV }}
           pwd
           cat testfile.txt
-          MY_STRING=123
+          MY_STRING="123"
           echo "$MY_STRING" >> $GITHUB_ENV
           echo $GITHUB_ENV
 
