@@ -9,7 +9,7 @@ env:
   TEST_ENV: "/home/htec11090/testDir"
 
 jobs:
-  env variable test:
+  env_variable_test:
     name: env variable fix v1
     runs-on: self-hosted
     steps:
