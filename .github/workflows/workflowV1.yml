@@ -18,13 +18,13 @@ jobs:
         run: |
           cd ${{ env.TEST_ENV }}
           touch testfile.txt
-          set MY_STRING=123
-          echo %MY_STRING%
+          export MY_STRING=123
+          echo $MY_STRING
 
       - name: Test2
         run: |
           echo "test2"
-          echo %MY_STRING%
+          echo $MY_STRING
           echo "test2222"
 
       
