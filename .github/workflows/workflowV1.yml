@@ -19,6 +19,7 @@ jobs:
           cd ${{ env.TEST_ENV }}
           touch testfile.txt
           export MY_STRING=123
+          echo %MY_STRING%
 
       - name: Test2
         run: |
