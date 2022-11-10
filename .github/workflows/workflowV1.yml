@@ -24,7 +24,7 @@ jobs:
       - name: Test2
         run: |
           echo "test2"
-          echo $MY_STRING
+          echo ${{ env.MY_STRING }}
           echo "test2222"
 
       
