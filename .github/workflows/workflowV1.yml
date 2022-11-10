@@ -21,7 +21,7 @@ jobs:
           cd ${{ env.TEST_ENV }}
           pwd
           cat testfile.txt
-          echo "STRING='Hello world!'" >> $GITHUB_ENV
+          echo "STRING=test" >> $GITHUB_ENV
       - name: Test2
         run: |
           pwd
