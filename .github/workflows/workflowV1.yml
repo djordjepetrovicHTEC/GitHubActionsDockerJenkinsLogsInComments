@@ -17,10 +17,11 @@ jobs:
         id: test_1
         run: |
           cd ${{ env.TEST_ENV }}
-          touch testfile.txt
-          export MY_STRING=123
+          pwd
+          cat testfile.txt
+          MY_STRING=123
           echo "$MY_STRING" >> $GITHUB_ENV
-          echo $MY_STRING
+          echo $GITHUB_ENV
 
       - name: Test2
         run: |
