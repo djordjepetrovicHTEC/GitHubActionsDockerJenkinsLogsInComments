@@ -26,7 +26,6 @@ jobs:
           pwd
           echo "test before variable"
           echo "My string is ${{ env.my_string }}"
-#          echo "My real string is ${{ env.my_string }}"
           echo "test after variable"
 
 
