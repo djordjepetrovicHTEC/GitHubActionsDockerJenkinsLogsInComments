@@ -19,13 +19,9 @@ jobs:
           cd ${{ env.TEST_ENV }}
           pwd
           cat testfile.txt
-          MY_STRING=$(cat << EOF
-          first line
-          second line
-          third line
-          EOF
-          )
-          
+          MY_STRING="hello"
+          echo "MY_STRING=$MY_STRING" >> $GITHUB_OUTPUT
+          echo $GITHUB_ENV
 
       - name: Test2
         run: |
