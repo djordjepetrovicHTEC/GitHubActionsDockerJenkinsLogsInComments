@@ -16,12 +16,11 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: Test1
-        id: my_string
         run: |
           cd ${{ env.TEST_ENV }}
           pwd
           cat testfile.txt
-          
+
       - name: Test2
         run: |
           pwd
