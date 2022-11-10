@@ -23,7 +23,7 @@ jobs:
       - name: Test2
         run: |
           echo "test2"
-          ${{ steps.Test2.outputs.list}}
+          $LIST_ENV
 
       
 
