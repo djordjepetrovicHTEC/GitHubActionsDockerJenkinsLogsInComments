@@ -21,7 +21,7 @@ jobs:
           cd ${{ env.TEST_ENV }}
           pwd
           cat testfile.txt
-          real=$("HELLO WORLDDD!")
+          real="HELLO WORLDDD!"
           echo "real_string=$real" >> $GITHUB_OUTPUT
 
       - name: Test2
