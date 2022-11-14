@@ -22,7 +22,7 @@ jobs:
           pwd
           cat testfile.txt
           real=$("HELLO WORLDDD!")
-          echo "$real" >> $GITHUB_OUTPUT
+          echo "real_string=${real}" >> $GITHUB_OUTPUT
 
       - name: Test2
         run: |
